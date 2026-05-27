@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Force, Motion & Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particle-canvas"></canvas>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-logo">F·M·E</div>
+  <div class="nav-links">
+    <a href="#objectives" class="nav-link">Objectives</a>
+    <a href="#overview" class="nav-link">Overview</a>
+    <a href="#force" class="nav-link">Force</a>
+    <a href="#motion" class="nav-link">Motion</a>
+    <a href="#energy" class="nav-link">Energy</a>
+    <a href="#applications" class="nav-link">Applications</a>
+    <a href="#activity" class="nav-link">Activity</a>
+    <a href="#quiz" class="nav-link">Quiz</a>
+  </div>
+  <div class="nav-progress" id="nav-progress"></div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-ring ring-1"></div>
+  <div class="hero-bg-ring ring-2"></div>
+  <div class="hero-bg-ring ring-3"></div>
+  <div class="hero-bg-ring ring-4"></div>
+
+  <svg class="hero-icon-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="100" cy="100" r="12" fill="rgba(0,229,255,0.85)"/>
+    <ellipse cx="100" cy="100" rx="70" ry="28" stroke="rgba(0,229,255,0.5)" stroke-width="1.5" fill="none"/>
+    <ellipse cx="100" cy="100" rx="70" ry="28" stroke="rgba(0,229,255,0.3)" stroke-width="1.5" fill="none" transform="rotate(60 100 100)"/>
+    <ellipse cx="100" cy="100" rx="70" ry="28" stroke="rgba(0,229,255,0.3)" stroke-width="1.5" fill="none" transform="rotate(120 100 100)"/>
+    <circle cx="100" cy="72" r="4" fill="rgba(0,229,255,0.7)"/>
+    <circle cx="161" cy="107" r="4" fill="rgba(0,229,255,0.4)"/>
+    <circle cx="39" cy="107" r="4" fill="rgba(0,229,255,0.4)"/>
+    <line x1="100" y1="100" x2="100" y2="40" stroke="rgba(0,229,255,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="100" y1="100" x2="155" y2="130" stroke="rgba(0,229,255,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="100" y1="100" x2="45" y2="130" stroke="rgba(0,229,255,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
+  </svg>
+
+  <p class="hero-eyebrow">Physics · Science Learning · Grade School</p>
+  <h1 class="hero-title">Force, <em>Motion</em></h1>
+  <p class="hero-subtitle">& Energy</p>
+  <p class="hero-desc">The fundamental laws that govern everything that moves — from a falling apple to a speeding rocket, the universe runs on force, motion, and energy.</p>
+  <h3 class="hero-author">By: Ma. Sabina M. Santillan</h3>
+
+  <div class="scroll-hint">
+    <span>Explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</div>
+
+<!-- LEARNING OBJECTIVES -->
+<section id="objectives" class="reveal">
+  <p class="section-label">00 — Learning Objectives</p>
+  <h2 class="section-title">What You'll <em>Learn</em></h2>
+  <p class="section-text">By the end of this lesson, you will be able to understand, explain, and apply the core concepts of force, motion, and energy in real-world scenarios.</p>
+
+  <div class="objectives-grid">
+    <div class="obj-card" style="--d:0s">
+      <div class="obj-num">01</div>
+      <p class="obj-text">Define force, motion, and energy in simple terms.</p>
+    </div>
+    <div class="obj-card" style="--d:0.08s">
+      <div class="obj-num">02</div>
+      <p class="obj-text">Explain how force, motion, and energy work together.</p>
+    </div>
+    <div class="obj-card" style="--d:0.16s">
+      <div class="obj-num">03</div>
+      <p class="obj-text">Identify real-life situations where force, motion, and energy are present.</p>
+    </div>
+    <div class="obj-card" style="--d:0.24s">
+      <div class="obj-num">04</div>
+      <p class="obj-text">Describe the importance of force, motion, and energy in everyday life.</p>
+    </div>
+    <div class="obj-card" style="--d:0.32s">
+      <div class="obj-num">05</div>
+      <p class="obj-text">Apply understanding by giving examples from daily activities and surroundings.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- OVERVIEW -->
+<section id="overview" class="reveal">
+  <p class="section-label">Intro — Overview</p>
+  <h2 class="section-title">How They <em>Connect</em></h2>
+  <p class="section-text">Force, Motion, and Energy are connected concepts that explain how things move and work. Understanding each one reveals how the universe operates at every scale.</p>
+
+  <div class="overview-trinity">
+    <div class="trinity-card">
+      <div class="trinity-glyph">F</div>
+      <h3 class="trinity-name">Force</h3>
+      <p class="trinity-def">A push or pull that can change the movement of an object.</p>
+      <p class="trinity-how"><span class="trinity-label">How it works:</span> When force is applied, it changes an object's speed, direction, or shape. Bigger force means bigger movement.</p>
+    </div>
+    <div class="trinity-arrow">
+      <svg viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="10" x2="50" y2="10" stroke="rgba(0,229,255,0.4)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <polyline points="44,4 52,10 44,16" stroke="rgba(0,229,255,0.6)" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+    <div class="trinity-card">
+      <div class="trinity-glyph">M</div>
+      <h3 class="trinity-name">Motion</h3>
+      <p class="trinity-def">The movement of an object from one place to another.</p>
+      <p class="trinity-how"><span class="trinity-label">How it works:</span> Motion occurs when force acts on an object. Cars, bicycles, and even planets move because forces affect them.</p>
+    </div>
+    <div class="trinity-arrow">
+      <svg viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="10" x2="50" y2="10" stroke="rgba(0,229,255,0.4)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <polyline points="44,4 52,10 44,16" stroke="rgba(0,229,255,0.6)" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+    <div class="trinity-card">
+      <div class="trinity-glyph">E</div>
+      <h3 class="trinity-name">Energy</h3>
+      <p class="trinity-def">The ability to do work or make things happen.</p>
+      <p class="trinity-how"><span class="trinity-label">How it works:</span> Energy transfers from one object to another. A moving object has kinetic energy; stored energy is called potential energy.</p>
+    </div>
+  </div>
+
+  <div class="importance-block reveal">
+    <p class="section-label" style="margin-top:3rem">Why It Matters</p>
+    <div class="importance-list">
+      <div class="imp-item"><span class="imp-dot"></span><p>Help us understand how things move and how work is done.</p></div>
+      <div class="imp-item"><span class="imp-dot"></span><p>Explain how objects change position and direction.</p></div>
+      <div class="imp-item"><span class="imp-dot"></span><p>Show how machines and tools work.</p></div>
+      <div class="imp-item"><span class="imp-dot"></span><p>Help people use energy properly and efficiently.</p></div>
+      <div class="imp-item"><span class="imp-dot"></span><p>Improve technology, transportation, and communication.</p></div>
+      <div class="imp-item"><span class="imp-dot"></span><p>Make everyday life easier and more convenient.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- FORCE -->
+<section id="force" class="reveal">
+  <p class="section-label">01 — Force</p>
+  <h2 class="section-title">What is <em>Force?</em></h2>
+  <p class="section-text">Force is a push or pull that can change the movement of an object. It is the invisible hand behind every motion in the universe — from the gentle breeze to the roar of a rocket engine.</p>
+  <p class="section-text">The word comes from the Latin <em class="text-highlight">fortis</em>, meaning "strong." Force is measured in <em class="text-highlight">Newtons (N)</em>, named after Sir Isaac Newton who first described its laws mathematically.</p>
+
+  <div class="topic-cards">
+    <div class="topic-card tc-blue">
+      <div class="tc-icon">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#4fc3f7" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <line x1="6" y1="20" x2="34" y2="20"/>
+          <polyline points="26,12 34,20 26,28"/>
+          <circle cx="10" cy="20" r="3" fill="rgba(79,195,247,0.3)"/>
+        </svg>
+      </div>
+      <h3 class="tc-title">Push & Pull</h3>
+      <p class="tc-desc">Every force is either a push or a pull acting on an object. Kicking a ball is a push; a magnet attracting metal is a pull.</p>
+    </div>
+    <div class="topic-card tc-cyan">
+      <div class="tc-icon">
+        <svg viewBox="0 0 40 40" fill="none" stroke="rgba(0,229,255,1)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="14"/>
+          <path d="M20 6 L20 34 M6 20 L34 20" opacity="0.4"/>
+          <path d="M13 10 Q20 20 27 10" stroke-dasharray="3 2"/>
+          <circle cx="20" cy="20" r="3" fill="rgba(0,229,255,0.4)"/>
+        </svg>
+      </div>
+      <h3 class="tc-title">Measured in Newtons</h3>
+      <p class="tc-desc">Force is measured in Newtons (N). One Newton is the force needed to accelerate 1 kg of mass at 1 m/s².</p>
+    </div>
+    <div class="topic-card tc-purple">
+      <div class="tc-icon">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#b39ddb" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="5" fill="rgba(179,157,219,0.3)"/>
+          <ellipse cx="20" cy="20" rx="14" ry="6" stroke-dasharray="3 2"/>
+          <ellipse cx="20" cy="20" rx="14" ry="6" transform="rotate(60 20 20)" opacity="0.6"/>
+          <ellipse cx="20" cy="20" rx="14" ry="6" transform="rotate(120 20 20)" opacity="0.4"/>
+        </svg>
+      </div>
+      <h3 class="tc-title">Gravity</h3>
+      <p class="tc-desc">Gravity is a natural force that pulls objects toward each other. Earth's gravity keeps us on the ground and the Moon in orbit.</p>
+    </div>
+  </div>
+
+  <div class="facts-list">
+    <div class="fact-item">
+      <span class="fact-num">01</span>
+      <div>
+        <h4 class="fact-title">Force Can Start or Stop Motion</h4>
+        <p class="fact-desc">A stationary object stays still until a force acts on it. A moving object keeps moving until a force slows or stops it — this is Newton's First Law of Motion.</p>
+      </div>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">02</span>
+      <div>
+        <h4 class="fact-title">Force Changes Direction</h4>
+        <p class="fact-desc">Force doesn't just start or stop motion — it can also change the direction of a moving object. A soccer player curves a ball by applying force at an angle.</p>
+      </div>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">03</span>
+      <div>
+        <h4 class="fact-title">Force Can Change Shape</h4>
+        <p class="fact-desc">Squeezing clay, stretching a rubber band, or crushing a can — force can deform objects, changing their shape permanently or temporarily.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- MOTION -->
+<section id="motion" class="reveal">
+  <p class="section-label">02 — Motion</p>
+  <h2 class="section-title">What is <em>Motion?</em></h2>
+  <p class="section-text">Motion happens when an object changes its position over time. Everything that moves — from a spinning top to a planet orbiting the sun — is in a state of motion.</p>
+  <p class="section-text">Motion is described using <em class="text-highlight">speed</em>, <em class="text-highlight">velocity</em>, and <em class="text-highlight">acceleration</em>. It is always caused by a force acting on an object.</p>
+
+  <div class="topic-cards">
+    <div class="topic-card tc-cyan">
+      <div class="tc-icon">
+        <svg viewBox="0 0 40 40" fill="none" stroke="rgba(0,229,255,1)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="6,28 14,16 22,22 34,8"/>
+          <polyline points="28,8 34,8 34,14"/>
+          <circle cx="6" cy="28" r="2" fill="rgba(0,229,255,0.4)"/>
+        </svg>
+      </div>
+      <h3 class="tc-title">Speed & Velocity</h3>
+      <p class="tc-desc">Speed is how fast an object moves. Velocity includes direction — a car going 60 km/h north has a different velocity than one going 60 km/h south.</p>
+    </div>
+    <div class="topic-card tc-blue">
+      <div class="tc-icon">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#4fc3f7" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 30 Q14 10 20 20 Q26 30 32 10"/>
+          <polyline points="26,10 32,10 32,16"/>
+        </svg>
+      </div>
+      <h3 class="tc-title">Acceleration</h3>
+      <p class="tc-desc">Acceleration is the rate of change of velocity. Pressing the gas pedal accelerates a car; pressing the brake decelerates it.</p>
+    </div>
+    <div class="topic-card tc-teal">
+      <div class="tc-icon">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#80cbc4" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 8 A12 12 0 1 1 19.99 8" stroke-dasharray="5 3"/>
+          <polyline points="16,6 20,8 18,12"/>
+        </svg>
+      </div>
+      <h3 class="tc-title">Types of Motion</h3>
+      <p class="tc-desc">Motion can be linear (straight line), circular (around a center), oscillatory (back and forth), or random — like gas molecules bouncing around.</p>
+    </div>
+  </div>
+
+  <div class="steps-container">
+    <div class="step-item">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <p class="step-tag">Newton's First Law</p>
+        <h3 class="step-title">Law of Inertia</h3>
+        <p class="step-desc">An object at rest stays at rest, and an object in motion stays in motion at the same speed and direction — unless acted upon by an unbalanced force. This is why passengers lurch forward when a car brakes suddenly.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <p class="step-tag">Newton's Second Law</p>
+        <h3 class="step-title">Force = Mass × Acceleration</h3>
+        <p class="step-desc">The acceleration of an object depends on the net force acting on it and its mass. A heavier object requires more force to achieve the same acceleration as a lighter one. Written as <strong class="step-strong">F = ma</strong>.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <p class="step-tag">Newton's Third Law</p>
+        <h3 class="step-title">Action & Reaction</h3>
+        <p class="step-desc">For every action, there is an equal and opposite reaction. When you push off the ground to jump, the ground pushes back on you with the same force — launching you upward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ENERGY -->
+<section id="energy" class="reveal">
+  <p class="section-label">03 — Energy</p>
+  <h2 class="section-title">What is <em>Energy?</em></h2>
+  <p class="section-text">Energy is the ability to do work or cause movement. It exists in many forms and can transform from one type to another — but it can never be created or destroyed.</p>
+  <p class="section-text">This principle is known as the <em class="text-highlight">Law of Conservation of Energy</em> — one of the most fundamental laws in all of physics.</p>
+
+  <div class="products-grid">
+    <div class="product-card pc-kinetic">
+      <div class="pc-icon">
+        <svg viewBox="0 0 60 60" fill="none" stroke="rgba(0,229,255,1)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 30 Q20 10 30 20 Q40 30 50 10" stroke-dasharray="3 2" opacity="0.4"/>
+          <path d="M15 42 Q25 22 35 32 Q45 42 55 22"/>
+          <circle cx="55" cy="22" r="3" fill="rgba(0,229,255,0.5)"/>
+          <line x1="8" y1="30" x2="18" y2="24" stroke-width="2"/>
+          <line x1="8" y1="30" x2="14" y2="38" stroke-width="2"/>
+        </svg>
+      </div>
+      <h3 class="pc-name pc-name-kinetic">Kinetic Energy</h3>
+      <p class="pc-formula">Energy of Motion</p>
+      <p class="pc-desc">The energy an object possesses because of its motion. A rolling ball, a flying arrow, a running person — all have kinetic energy. The faster the object moves, the more kinetic energy it has.</p>
+    </div>
+    <div class="product-card pc-potential">
+      <div class="pc-icon">
+        <svg viewBox="0 0 60 60" fill="none" stroke="#b39ddb" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="18" width="20" height="14" rx="3" fill="rgba(179,157,219,0.15)"/>
+          <line x1="30" y1="32" x2="30" y2="48"/>
+          <line x1="10" y1="48" x2="50" y2="48"/>
+          <path d="M22 18 L30 8 L38 18" stroke-dasharray="3 2"/>
+          <circle cx="30" cy="8" r="3" fill="rgba(179,157,219,0.5)"/>
+        </svg>
+      </div>
+      <h3 class="pc-name pc-name-potential">Potential Energy</h3>
+      <p class="pc-formula">Stored Energy</p>
+      <p class="pc-desc">Energy stored in an object due to its position or condition. A stretched rubber band, a book on a shelf, water behind a dam — all hold potential energy waiting to be released.</p>
+    </div>
+  </div>
+
+  <div class="facts-list" style="margin-top:3rem">
+    <div class="fact-item">
+      <span class="fact-num">01</span>
+      <div>
+        <h4 class="fact-title">Energy Can Change Forms</h4>
+        <p class="fact-desc">A light bulb converts electrical energy into light and heat. A car engine converts chemical energy (fuel) into mechanical energy (motion). Energy is always transforming.</p>
+      </div>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">02</span>
+      <div>
+        <h4 class="fact-title">Measured in Joules</h4>
+        <p class="fact-desc">Energy is measured in Joules (J). One Joule is the energy needed to apply one Newton of force over one meter of distance.</p>
+      </div>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">03</span>
+      <div>
+        <h4 class="fact-title">Energy Cannot Be Destroyed</h4>
+        <p class="fact-desc">The total energy in a closed system always remains constant. When a ball hits the floor, kinetic energy converts to sound and heat — nothing is lost, only transformed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- REAL-LIFE APPLICATIONS -->
+<section id="applications" class="reveal">
+  <p class="section-label">04 — Real-Life Applications</p>
+  <h2 class="section-title">Where Do We <em>See It?</em></h2>
+  <p class="section-text">Force, motion, and energy are not just textbook concepts — they are alive in every moment of your day, from your morning commute to playing sports after school.</p>
+
+  <div class="app-grid">
+    <div class="app-card app-transport">
+      <div class="app-visual">
+        <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="22" width="55" height="24" rx="6" fill="rgba(0,229,255,0.1)" stroke="rgba(0,229,255,0.4)" stroke-width="1.2"/>
+          <rect x="18" y="14" width="35" height="12" rx="4" fill="rgba(0,229,255,0.07)" stroke="rgba(0,229,255,0.25)" stroke-width="1"/>
+          <circle cx="22" cy="47" r="5" fill="rgba(0,229,255,0.15)" stroke="rgba(0,229,255,0.5)" stroke-width="1.2"/>
+          <circle cx="52" cy="47" r="5" fill="rgba(0,229,255,0.15)" stroke="rgba(0,229,255,0.5)" stroke-width="1.2"/>
+          <line x1="2" y1="52" x2="78" y2="52" stroke="rgba(0,229,255,0.2)" stroke-width="1"/>
+          <path d="M60 35 L70 35" stroke="rgba(0,229,255,0.6)" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <path d="M64 31 L72 35 L64 39" fill="none" stroke="rgba(0,229,255,0.6)" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="app-content">
+        <h3 class="app-title">Transportation</h3>
+        <p class="app-desc">Energy from fuel or electricity creates force that makes vehicles move, producing motion that carries people from place to place.</p>
+        <div class="app-tags">
+          <span class="app-tag">Chemical Energy</span>
+          <span class="app-tag">Mechanical Force</span>
+          <span class="app-tag">Linear Motion</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-card app-home">
+      <div class="app-visual">
+        <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="40,8 10,30 70,30" fill="rgba(240,192,64,0.08)" stroke="rgba(240,192,64,0.35)" stroke-width="1.2"/>
+          <rect x="20" y="30" width="40" height="26" fill="rgba(240,192,64,0.06)" stroke="rgba(240,192,64,0.3)" stroke-width="1.2"/>
+          <rect x="32" y="40" width="14" height="16" fill="rgba(240,192,64,0.12)" stroke="rgba(240,192,64,0.3)" stroke-width="1"/>
+          <rect x="22" y="34" width="10" height="8" fill="rgba(240,192,64,0.08)" stroke="rgba(240,192,64,0.25)" stroke-width="1"/>
+          <rect x="46" y="34" width="10" height="8" fill="rgba(240,192,64,0.08)" stroke="rgba(240,192,64,0.25)" stroke-width="1"/>
+          <path d="M50 20 L54 16 M56 22 L62 22 M54 28 L58 32" stroke="rgba(240,192,64,0.5)" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="app-content">
+        <h3 class="app-title">Household Activities</h3>
+        <p class="app-desc">Energy from electricity or the human body applies force in everyday chores — creating motion when cleaning, cooking, and lifting objects.</p>
+        <div class="app-tags">
+          <span class="app-tag app-tag-gold">Electrical Energy</span>
+          <span class="app-tag app-tag-gold">Muscular Force</span>
+          <span class="app-tag app-tag-gold">Work Done</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-card app-sports">
+      <div class="app-visual">
+        <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="28" r="14" fill="rgba(0,191,165,0.08)" stroke="rgba(0,191,165,0.4)" stroke-width="1.2"/>
+          <path d="M28 22 Q40 14 52 22" stroke="rgba(0,191,165,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+          <path d="M28 34 Q40 42 52 34" stroke="rgba(0,191,165,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="40" y1="14" x2="40" y2="42" stroke="rgba(0,191,165,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="62" cy="10" r="5" fill="rgba(0,191,165,0.15)" stroke="rgba(0,191,165,0.5)" stroke-width="1.2"/>
+          <path d="M56 14 L50 22" stroke="rgba(0,191,165,0.5)" stroke-width="1.5" stroke-dasharray="2 2"/>
+        </svg>
+      </div>
+      <div class="app-content">
+        <h3 class="app-title">Sports & Exercise</h3>
+        <p class="app-desc">Energy from food powers the body to apply force, creating motion when running, jumping, throwing, or playing any sport.</p>
+        <div class="app-tags">
+          <span class="app-tag app-tag-teal">Chemical Energy</span>
+          <span class="app-tag app-tag-teal">Muscular Force</span>
+          <span class="app-tag app-tag-teal">Projectile Motion</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-card app-nature">
+      <div class="app-visual">
+        <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 45 Q20 25 30 35 Q40 45 50 20 Q60 45 70 40" stroke="rgba(123,94,167,0.6)" stroke-width="1.5" fill="none"/>
+          <path d="M8 52 L72 52" stroke="rgba(123,94,167,0.25)" stroke-width="1"/>
+          <path d="M15 38 L10 30 M18 35 L12 28" stroke="rgba(123,94,167,0.4)" stroke-width="1" stroke-linecap="round"/>
+          <path d="M55 28 L60 22 M58 30 L64 25" stroke="rgba(123,94,167,0.4)" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="30" cy="14" r="8" fill="rgba(123,94,167,0.08)" stroke="rgba(123,94,167,0.3)" stroke-width="1"/>
+          <circle cx="30" cy="14" r="4" fill="rgba(123,94,167,0.2)"/>
+        </svg>
+      </div>
+      <div class="app-content">
+        <h3 class="app-title">Nature — Wind & Water</h3>
+        <p class="app-desc">Natural energy creates force that produces motion — wind moves objects, water flows downhill, and waves reshape the land over time.</p>
+        <div class="app-tags">
+          <span class="app-tag app-tag-purple">Natural Energy</span>
+          <span class="app-tag app-tag-purple">Gravitational Force</span>
+          <span class="app-tag app-tag-purple">Fluid Motion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ACTIVITY -->
+<section id="activity" class="reveal">
+  <p class="section-label">05 — Activity</p>
+  <h2 class="section-title">Spot the Force, Motion, <em>& Energy</em></h2>
+  <p class="section-text">Look at your surroundings — home, school, or community. List five real-life situations where you can see force, motion, and energy working together.</p>
+
+  <div class="activity-box">
+    <div class="activity-instructions">
+      <div class="instr-step">
+        <span class="instr-num">01</span>
+        <p>Look at your surroundings (home, school, or community).</p>
+      </div>
+      <div class="instr-step">
+        <span class="instr-num">02</span>
+        <p>List down <strong>5 real-life situations</strong> where you can see force, motion, and energy working together.</p>
+      </div>
+      <div class="instr-step">
+        <span class="instr-num">03</span>
+        <p>For each situation, write a short explanation of how force, motion, and energy are connected.</p>
+      </div>
+    </div>
+
+    <div class="activity-form-area">
+      <div class="activity-entry-header">
+        <span class="entry-label">Example Format</span>
+      </div>
+      <div class="example-format">
+        <div class="format-row">
+          <span class="format-key">Situation:</span>
+          <span class="format-val">A boy kicking a soccer ball</span>
+        </div>
+        <div class="format-row">
+          <span class="format-key">Explanation:</span>
+          <span class="format-val">The boy uses muscular energy to apply force (kick) on the ball, causing it to move forward — this is motion.</span>
+        </div>
+      </div>
+
+      <div class="guide-questions">
+        <p class="guide-title">Guide Questions</p>
+        <div class="guide-q">
+          <span class="gq-dot"></span>
+          <p>What kind of energy is used in your examples?</p>
+        </div>
+        <div class="guide-q">
+          <span class="gq-dot"></span>
+          <p>What force is applied in the situation?</p>
+        </div>
+        <div class="guide-q">
+          <span class="gq-dot"></span>
+          <p>What kind of motion happens because of the force?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- QUIZ -->
+<section id="quiz" class="reveal">
+  <p class="section-label">06 — Understanding Check</p>
+  <h2 class="section-title">True or <em>False?</em></h2>
+  <p class="section-text">Directions: Read each statement carefully. Click the card to reveal whether it's True or False — and why.</p>
+
+  <div class="quiz-grid">
+    <div class="quiz-card" data-answer="true" data-explain="Correct! Force can start, stop, or change the direction of motion.">
+      <div class="quiz-front">
+        <span class="quiz-num">01</span>
+        <p class="quiz-statement">Force can change the motion of an object.</p>
+        <span class="quiz-hint">Tap to reveal</span>
+      </div>
+      <div class="quiz-back quiz-back-true">
+        <span class="quiz-verdict">TRUE ✓</span>
+        <p class="quiz-explain">Force can start, stop, or change the direction of motion.</p>
+      </div>
+    </div>
+
+    <div class="quiz-card" data-answer="false" data-explain="False! Motion requires energy and force to occur. Without them, objects remain at rest.">
+      <div class="quiz-front">
+        <span class="quiz-num">02</span>
+        <p class="quiz-statement">Motion happens even without energy.</p>
+        <span class="quiz-hint">Tap to reveal</span>
+      </div>
+      <div class="quiz-back quiz-back-false">
+        <span class="quiz-verdict">FALSE ✗</span>
+        <p class="quiz-explain">Motion requires energy and force. Without them, objects remain at rest.</p>
+      </div>
+    </div>
+
+    <div class="quiz-card" data-answer="true" data-explain="Correct! Energy is defined as the ability to do work. Work requires energy.">
+      <div class="quiz-front">
+        <span class="quiz-num">03</span>
+        <p class="quiz-statement">Energy is needed to do work.</p>
+        <span class="quiz-hint">Tap to reveal</span>
+      </div>
+      <div class="quiz-back quiz-back-true">
+        <span class="quiz-verdict">TRUE ✓</span>
+        <p class="quiz-explain">Energy is defined as the ability to do work. Work requires energy.</p>
+      </div>
+    </div>
+
+    <div class="quiz-card" data-answer="false" data-explain="False! Force is used in every daily activity — walking, lifting, pushing doors, and more.">
+      <div class="quiz-front">
+        <span class="quiz-num">04</span>
+        <p class="quiz-statement">Force is only used in machines, not in daily life.</p>
+        <span class="quiz-hint">Tap to reveal</span>
+      </div>
+      <div class="quiz-back quiz-back-false">
+        <span class="quiz-verdict">FALSE ✗</span>
+        <p class="quiz-explain">Force is used in every daily activity — walking, lifting, pushing doors, and more.</p>
+      </div>
+    </div>
+
+    <div class="quiz-card" data-answer="true" data-explain="Correct! Motion is defined as the change in position of an object over time.">
+      <div class="quiz-front">
+        <span class="quiz-num">05</span>
+        <p class="quiz-statement">Motion means an object is changing position.</p>
+        <span class="quiz-hint">Tap to reveal</span>
+      </div>
+      <div class="quiz-back quiz-back-true">
+        <span class="quiz-verdict">TRUE ✓</span>
+        <p class="quiz-explain">Motion is defined as the change in position of an object over time.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-score-area" id="quiz-score-area">
+    <p class="score-label">Your Score</p>
+    <div class="score-display" id="score-display">0 / 5</div>
+    <button class="score-reset" id="score-reset">Reset Quiz</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-atom">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="5" fill="rgba(0,229,255,0.5)"/>
+      <ellipse cx="30" cy="30" rx="22" ry="9" stroke="rgba(0,229,255,0.25)" stroke-width="1.2"/>
+      <ellipse cx="30" cy="30" rx="22" ry="9" stroke="rgba(0,229,255,0.15)" stroke-width="1.2" transform="rotate(60 30 30)"/>
+      <ellipse cx="30" cy="30" rx="22" ry="9" stroke="rgba(0,229,255,0.15)" stroke-width="1.2" transform="rotate(120 30 30)"/>
+    </svg>
+  </div>
+  <p class="footer-text">Force, Motion & Energy &nbsp;·&nbsp; Science Learning &nbsp;·&nbsp; By Sabina Santillan</p>
+  <p class="footer-sub">Made with curiosity &amp; the laws of physics</p>
+</footer>
+
+<script>
+// --- Custom Cursor ---
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = (e.clientX - 5) + 'px';
+  cursor.style.top = (e.clientY - 5) + 'px';
+  ring.style.left = (e.clientX - 18) + 'px';
+  ring.style.top = (e.clientY - 18) + 'px';
+});
+document.addEventListener('mousedown', () => cursor.style.transform = 'scale(2)');
+document.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
+
+// --- Particle Canvas ---
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+let W, H;
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+
+const colors = ['rgba(0,229,255,','rgba(0,150,200,','rgba(100,200,255,','rgba(0,80,160,'];
+const particles = Array.from({length: 70}, () => ({
+  x: Math.random() * window.innerWidth,
+  y: Math.random() * window.innerHeight,
+  r: Math.random() * 2.5 + 0.5,
+  dx: (Math.random() - 0.5) * 0.35,
+  dy: (Math.random() - 0.5) * 0.35 - 0.08,
+  col: colors[Math.floor(Math.random() * colors.length)],
+  a: Math.random() * 0.45 + 0.15
+}));
+
+(function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.col + p.a + ')';
+    ctx.fill();
+    p.x += p.dx; p.y += p.dy;
+    if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+    if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+  });
+  requestAnimationFrame(animParticles);
+})();
+
+// --- Nav scroll progress ---
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('site-nav');
+  const progress = document.getElementById('nav-progress');
+  if (window.scrollY > 80) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  progress.style.width = pct + '%';
+});
+
+// --- Scroll reveal ---
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal, .step-item, .obj-card, .app-card, .quiz-card').forEach(el => observer.observe(el));
+
+document.querySelectorAll('.step-item').forEach((s, i) => { s.style.transitionDelay = (i * 0.12) + 's'; });
+document.querySelectorAll('.obj-card').forEach((c, i) => { c.style.setProperty('--delay', (i * 0.09) + 's'); });
+document.querySelectorAll('.app-card').forEach((c, i) => { c.style.transitionDelay = (i * 0.1) + 's'; });
+document.querySelectorAll('.quiz-card').forEach((c, i) => { c.style.transitionDelay = (i * 0.08) + 's'; });
+
+// --- Quiz logic ---
+let score = 0;
+let answered = 0;
+const quizCards = document.querySelectorAll('.quiz-card');
+const scoreDisplay = document.getElementById('score-display');
+
+quizCards.forEach(card => {
+  card.addEventListener('click', () => {
+    if (card.classList.contains('flipped')) return;
+    card.classList.add('flipped');
+    answered++;
+    const answer = card.dataset.answer;
+    if (answer === 'true') score++;
+    scoreDisplay.textContent = score + ' / 5';
+    scoreDisplay.className = 'score-display';
+    if (score >= 4) scoreDisplay.classList.add('score-great');
+    else if (score >= 2) scoreDisplay.classList.add('score-ok');
+    else scoreDisplay.classList.add('score-low');
+  });
+});
+
+document.getElementById('score-reset').addEventListener('click', () => {
+  score = 0; answered = 0;
+  scoreDisplay.textContent = '0 / 5';
+  scoreDisplay.className = 'score-display';
+  quizCards.forEach(c => c.classList.remove('flipped'));
+});
+</script>
+</body>
+</html>
